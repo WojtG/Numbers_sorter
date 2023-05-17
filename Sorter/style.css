@@ -1,0 +1,122 @@
+img {
+  max-width: 100%;
+  display: block;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+
+.form-common-styles {
+  border: none;
+  outline: none;
+  font-size: 1.375rem;
+  border-radius: 10px;
+  padding: 1em;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/*!=============== LAYOUT =================*/
+
+body {
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  font-size: 1.375rem;
+  background-color: #efd5ff;
+  background: linear-gradient(90deg, #fdbb2d 0%, #22c1c3 100%);
+  padding: 2em 0;
+}
+
+.sorting-form {
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  grid-template-areas:
+    "d d d"
+    " i i b"
+    " u u u"
+    "c . r";
+  grid-gap: 1em 2em;
+  width: 80vw;
+}
+
+.btn {
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+  color: black;
+  transition: background-color 0.3s;
+  font-weight: bold;
+  padding: 1em 1.5em;
+  cursor: pointer;
+  text-align: center;
+}
+
+.btn:active {
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+.sorting-form__btn-sort {
+  grid-area: b;
+  background-color: #f7e173;
+}
+
+.sorting-form__btn-sort:hover,
+.sorting-form__btn-sort:active {
+  background-color: #f7d73b;
+}
+
+.sorting-form__btn-reset {
+  grid-area: r;
+  background-color: #f72c4e;
+}
+
+.sorting-form__btn-reset:focus,
+.sorting-form__btn-reset:hover {
+  background-color: #e2062c;
+}
+
+.sorting-form__btn-copy {
+  grid-area: c;
+  background-color: #506ff8;
+}
+
+.sorting-form__btn-copy:focus,
+.sorting-form__btn-copy:hover {
+  background-color: #375af8;
+}
+
+.sorting-form__input {
+  grid-area: i;
+  outline: 0px solid transparent;
+  transition: outline 0.3s ease-out;
+}
+
+.sorting-form__input:focus,
+.sorting-form__input:hover {
+  outline: 1px solid black;
+}
+
+.sorting-form__output {
+  grid-area: u;
+  resize: vertical;
+  outline: 0px solid transparent;
+  transition: outline 0.3s ease-out;
+}
+
+.sorting-form__output:focus,
+.sorting-form__output:hover {
+  outline: 1px solid black;
+}
+
+.sorting-form__desc {
+  grid-area: d;
+  margin-bottom: -0.5em;
+  font-weight: bold;
+}
